@@ -1,0 +1,22 @@
+{
+  "name": "watchlist-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev:server": "npm --workspace=server run dev",
+    "dev:client": "npm --workspace=client run dev",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm --workspace=server run test",
+    "db:migrate": "npm --workspace=server run db:migrate",
+    "db:dev:init": "npm --workspace=server run db:dev:init",
+    "db:dev:start": "npm --workspace=server run db:dev:start",
+    "db:dev:stop": "npm --workspace=server run db:dev:stop"
+  }
+}
+

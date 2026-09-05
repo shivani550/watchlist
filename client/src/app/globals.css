@@ -1,0 +1,279 @@
+:root {
+  /* Light Theme (Clean off-white/white surfaces) */
+  --bg-app: #f8fafc;
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;
+  --border-card: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* Typography */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  /* Blue Secondary Accent (Navigation, Active, Interactive, Focus) */
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --accent-blue-light: #eff6ff;
+  --accent-blue-border: #bfdbfe;
+  --accent-blue-text: #1d4ed8;
+
+  /* Primary Brand Accent (Interactive CTA) */
+  --brand-primary: #2563eb;
+  --brand-hover: #1d4ed8;
+  --brand-light: #eff6ff;
+  --brand-border: #bfdbfe;
+
+  /* Financial Market Indicators (Semantic Green / Red) */
+  --market-up: #00b386;
+  --market-up-light: #ebfbf5;
+  --market-up-border: #b7f0de;
+
+  --market-down: #eb5b5b;
+  --market-down-light: #fef2f2;
+  --market-down-border: #fecaca;
+
+  --market-neutral: #64748b;
+  --market-neutral-light: #f1f5f9;
+  --market-neutral-border: #e2e8f0;
+
+  /* Data Freshness States */
+  --freshness-fresh-dot: #00b386;
+  --freshness-fresh-bg: #ebfbf5;
+  --freshness-fresh-text: #008765;
+  --freshness-fresh-border: #b7f0de;
+
+  --freshness-delayed-dot: #d97706;
+  --freshness-delayed-bg: #fffbeb;
+  --freshness-delayed-text: #b45309;
+  --freshness-delayed-border: #fde68a;
+
+  --freshness-stale-dot: #64748b;
+  --freshness-stale-bg: #f8fafc;
+  --freshness-stale-text: #64748b;
+  --freshness-stale-border: #e2e8f0;
+
+  --freshness-unavailable-dot: #ef4444;
+  --freshness-unavailable-bg: #fef2f2;
+  --freshness-unavailable-text: #dc2626;
+  --freshness-unavailable-border: #fecaca;
+
+  /* Geometry & Shadows */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-popover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Modal Overlay & Charts */
+  --modal-overlay: rgba(15, 23, 42, 0.45);
+  --chart-grid: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme (Deep charcoal/navy background & elevated surfaces) */
+  --bg-app: #0b0f19;
+  --bg-primary: #0b0f19;
+  --bg-card: #111827;
+  --bg-card-hover: #172033;
+  --bg-secondary: #161f30;
+  --bg-tertiary: #1e293b;
+
+  /* Borders & Dividers */
+  --border-subtle: #1e293b;
+  --border-card: #243048;
+  --border-hover: #334155;
+
+  /* Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Blue Secondary Accent (Refined for Dark Mode) */
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #60a5fa;
+  --accent-blue-light: rgba(59, 130, 246, 0.15);
+  --accent-blue-border: rgba(59, 130, 246, 0.35);
+  --accent-blue-text: #93c5fd;
+
+  /* Primary Brand Accent */
+  --brand-primary: #3b82f6;
+  --brand-hover: #2563eb;
+  --brand-light: rgba(59, 130, 246, 0.15);
+  --brand-border: rgba(59, 130, 246, 0.35);
+
+  /* Financial Market Indicators (Semantic Green / Red) */
+  --market-up: #10b981;
+  --market-up-light: rgba(16, 185, 129, 0.14);
+  --market-up-border: rgba(16, 185, 129, 0.28);
+
+  --market-down: #f87171;
+  --market-down-light: rgba(239, 68, 68, 0.14);
+  --market-down-border: rgba(239, 68, 68, 0.28);
+
+  --market-neutral: #94a3b8;
+  --market-neutral-light: #161f30;
+  --market-neutral-border: #243048;
+
+  /* Data Freshness States */
+  --freshness-fresh-dot: #10b981;
+  --freshness-fresh-bg: rgba(16, 185, 129, 0.14);
+  --freshness-fresh-text: #34d399;
+  --freshness-fresh-border: rgba(16, 185, 129, 0.28);
+
+  --freshness-delayed-dot: #fbbf24;
+  --freshness-delayed-bg: rgba(245, 158, 11, 0.14);
+  --freshness-delayed-text: #fcd34d;
+  --freshness-delayed-border: rgba(245, 158, 11, 0.28);
+
+  --freshness-stale-dot: #94a3b8;
+  --freshness-stale-bg: #161f30;
+  --freshness-stale-text: #94a3b8;
+  --freshness-stale-border: #243048;
+
+  --freshness-unavailable-dot: #f87171;
+  --freshness-unavailable-bg: rgba(239, 68, 68, 0.14);
+  --freshness-unavailable-text: #fca5a5;
+  --freshness-unavailable-border: rgba(239, 68, 68, 0.28);
+
+  /* Geometry & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-popover: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  /* Modal Overlay & Charts */
+  --modal-overlay: rgba(3, 7, 18, 0.75);
+  --chart-grid: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tabular figures for all financial numbers */
+.num-tabular, [data-num] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-blue-hover);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus, button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Responsive Two-Panel Workspace Grid (Batch 18) */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(340px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
