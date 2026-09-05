@@ -8,6 +8,9 @@
     "client"
   ],
   "scripts": {
+    "start": "node server/dist/index.js",
+    "start:server": "node server/dist/index.js",
+    "build:server": "npm --workspace=@watchlist/shared run build && npm --workspace=@watchlist/server run build",
     "dev:server": "npm --workspace=server run dev",
     "dev:client": "npm --workspace=client run dev",
     "build": "npm run build --workspaces",
