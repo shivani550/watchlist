@@ -5,7 +5,15 @@ import { apiRouter } from './routes.js';
 export const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+  })
+);
+app.options('*', cors());
 app.use(express.json());
 
 // API Routes
