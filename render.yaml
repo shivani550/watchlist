@@ -1,0 +1,44 @@
+services:
+  # 1. Express Backend Web Service with WebSockets
+  - type: web
+    name: watchlist-server
+    env: node
+    plan: free
+    buildCommand: npm install && npm --workspace=server run build
+    startCommand: npm --workspace=server run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: watchlist-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+
+  # 2. Next.js Frontend Web Service
+  - type: web
+    name: watchlist-client
+    env: node
+    plan: free
+    buildCommand: npm install && npm --workspace=client run build
+    startCommand: npm --workspace=client run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: watchlist-server
+          property: host
+          value: https://${host}/api
+
+databases:
+  # Managed PostgreSQL Database
+  - name: watchlist-db
+    plan: free
+    databaseName: watchlist_db
+    user: postgres

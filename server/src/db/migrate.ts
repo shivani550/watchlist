@@ -20,8 +20,17 @@ export async function runMigrations() {
       );
     `);
 
-    // 2. Read migration files
-    const migrationsDir = path.resolve(__dirname, 'migrations');
+    // 2. Read migration files (handles both tsx source and compiled dist)
+    let migrationsDir = path.resolve(__dirname, 'migrations');
+    if (!fs.existsSync(migrationsDir)) {
+      migrationsDir = path.resolve(__dirname, '../../src/db/migrations');
+    }
+    if (!fs.existsSync(migrationsDir)) {
+      migrationsDir = path.resolve(process.cwd(), 'src/db/migrations');
+    }
+    if (!fs.existsSync(migrationsDir)) {
+      migrationsDir = path.resolve(process.cwd(), 'server/src/db/migrations');
+    }
     const files = fs.readdirSync(migrationsDir).filter((f) => f.endsWith('.sql')).sort();
 
     // 3. Find already applied migrations

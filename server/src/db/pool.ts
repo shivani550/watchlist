@@ -5,7 +5,12 @@ const { Pool } = pg;
 
 export const pool = new Pool(
   env.DATABASE_URL
-    ? { connectionString: env.DATABASE_URL }
+    ? {
+        connectionString: env.DATABASE_URL,
+        ssl: env.NODE_ENV === 'production' || env.DATABASE_URL.includes('sslmode=require') || env.DATABASE_URL.includes('neon.tech') || env.DATABASE_URL.includes('supabase.co') || env.DATABASE_URL.includes('render.com')
+          ? { rejectUnauthorized: false }
+          : undefined,
+      }
     : {
         host: env.PGHOST,
         port: env.PGPORT,
@@ -15,6 +20,7 @@ export const pool = new Pool(
         max: 20,
         idleTimeoutMillis: 30000,
         connectionTimeoutMillis: 5000,
+        ssl: env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined,
       }
 );
 

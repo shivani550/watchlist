@@ -4,11 +4,15 @@ import { pool } from './db/pool.js';
 import { seedDatabase } from './db/seed.js';
 import { wsServer } from './websocket/websocket.server.js';
 
-// Auto-seed demo trader account and initial instruments in non-test environments
+import { runMigrations } from './db/migrate.js';
+
+// Auto-migrate & seed demo trader account and initial instruments in non-test environments
 if (env.NODE_ENV !== 'test') {
-  seedDatabase().catch((err) => {
-    console.error('⚠️ Non-fatal error during auto-seeding:', err);
-  });
+  runMigrations()
+    .then(() => seedDatabase())
+    .catch((err) => {
+      console.error('⚠️ Non-fatal error during auto-migration/seeding:', err);
+    });
 }
 
 // Start server
