@@ -4,8 +4,8 @@ services:
     name: watchlist-server
     env: node
     plan: free
-    buildCommand: npm install && npm --workspace=server run build
-    startCommand: npm --workspace=server run start
+    buildCommand: npm install && npm --workspace=@watchlist/shared run build && npm --workspace=@watchlist/server run build
+    startCommand: node server/dist/index.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
@@ -24,8 +24,8 @@ services:
     name: watchlist-client
     env: node
     plan: free
-    buildCommand: npm install && npm --workspace=client run build
-    startCommand: npm --workspace=client run start
+    buildCommand: npm install && npm --workspace=@watchlist/shared run build && npm --workspace=@watchlist/client run build
+    startCommand: npm --workspace=@watchlist/client run start
     envVars:
       - key: NODE_ENV
         value: production
