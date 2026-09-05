@@ -15,9 +15,9 @@ if (env.NODE_ENV !== 'test') {
     });
 }
 
-// Start server
-const server = app.listen(env.PORT, () => {
-  console.log(`🚀 Watchlist REST API listening on port ${env.PORT} [${env.NODE_ENV}]`);
+// Start server binding on 0.0.0.0 for container / cloud hosting
+const server = app.listen(env.PORT, '0.0.0.0', () => {
+  console.log(`🚀 Watchlist REST API listening on 0.0.0.0:${env.PORT} [${env.NODE_ENV}]`);
   wsServer.init(server);
 });
 

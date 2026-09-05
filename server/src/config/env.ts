@@ -11,7 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 dotenv.config({ path: path.resolve(__dirname, '../../../../.env') });
 
 const envSchema = z.object({
-  PORT: z.string().default('5000').transform((val) => parseInt(val, 10)),
+  PORT: z.union([z.string(), z.number()]).default(5000).transform((val) => typeof val === 'number' ? val : parseInt(val, 10)),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   DATABASE_URL: z.string().optional(),
   PGHOST: z.string().default('localhost'),
