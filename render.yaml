@@ -4,7 +4,7 @@ services:
     name: watchlist-server
     env: node
     plan: free
-    buildCommand: npm install && npm --workspace=@watchlist/shared run build && npm --workspace=@watchlist/server run build
+    buildCommand: npm install --include=dev && npm --workspace=@watchlist/shared run build && npm --workspace=@watchlist/server run build
     startCommand: node server/dist/index.js
     healthCheckPath: /api/health
     envVars:
